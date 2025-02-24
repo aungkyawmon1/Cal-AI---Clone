@@ -11,12 +11,12 @@ struct AccomplishView: View {
     @ObservedObject var userData: UserData
     @State private var isViewVisible = false
     
-    let accomplishLists: [String] = [
-        "eat_and_live_healthier".localized,
-        "boost_my_energy_and_mood".localized,
-        "stay_motivated_and_consistent".localized,
-        "feel_better_about_my_body".localized
-    ]
+    let accomplishLists = [
+        SelectableTextButtonWithIconVO(name: "eat_and_live_healthier".localized , icon: "bolt.heart.fill"),
+        SelectableTextButtonWithIconVO(name: "boost_my_energy_and_mood".localized, icon: "heart.circle"),
+        SelectableTextButtonWithIconVO(name: "stay_motivated_and_consistent".localized, icon: "heart.fill"),
+        SelectableTextButtonWithIconVO(name: "feel_better_about_my_body".localized, icon: "heart.circle")
+    ] // (Title, image resource)
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -33,13 +33,17 @@ struct AccomplishView: View {
             
             VStack(spacing: 16) {
                 ForEach(Array(accomplishLists.enumerated()), id: \.element) { index, accomplishment in
-                    SelectableTextButton(
-                        text: accomplishment,
-                        isSelected: userData.accomplishment == accomplishment,
-                        action: {
-                            userData.accomplishment = accomplishment
+                   
+                    SelectableTextButtonWithIcon(
+                        icon: accomplishment.icon,
+                        text: accomplishment.name,
+                        isSelected: userData.accomplishment == accomplishment.name,
+                        isSystemImage: true
+                    ) {
+                        withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                            userData.accomplishment = accomplishment.name
                         }
-                    )
+                    }
                     .modifier(SlideInFromTopModifier(
                         isPresented: isViewVisible,
                         delay: 0.3 + Double(index) * 0.1

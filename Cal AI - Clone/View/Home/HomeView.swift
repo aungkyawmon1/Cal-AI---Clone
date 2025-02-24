@@ -64,14 +64,19 @@ struct HomeView: View {
         
         let heightString: String
         let weightString: String
+        let desiredWeightString: String
         
         if userData.useMetricSystem {
             heightString = "\(userData.height.cm) cm"
             weightString = "\(userData.weight.kg) kg"
+            desiredWeightString = String(format: "%.1f kg", userData.desiredWeight)
         } else {
             heightString = "\(userData.height.feet)'\(userData.height.inches)\""
             weightString = "\(userData.weight.lb) lbs"
+            desiredWeightString = String(format: "%.1f lbs", userData.desiredWeight)
         }
+        
+        let weightLossSpeedString = String(format: "%.1f kg/week", userData.weightLossSpeed)
         
         return [
             ("Gender", userData.gender),
@@ -81,7 +86,14 @@ struct HomeView: View {
             ("Measurement System", userData.useMetricSystem ? "Metric" : "Imperial"),
             ("Height", heightString),
             ("Weight", weightString),
-            ("Birth Date", dateFormatter.string(from: userData.birthDate))
+            ("Birth Date", dateFormatter.string(from: userData.birthDate)),
+            ("Goal", userData.goal),
+            ("Desired Weight", desiredWeightString),
+            ("Maintenance Obstacle", userData.maintainanceObstacle),
+            ("Diet Type", userData.specificDiet),
+            ("Primary Accomplishment", userData.accomplishment),
+            ("Weight Loss Speed", weightLossSpeedString),
+            ("Referral Code", userData.referralCode.isEmpty ? "None" : userData.referralCode)
         ]
     }
 }

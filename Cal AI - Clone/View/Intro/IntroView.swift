@@ -39,9 +39,14 @@ struct IntroView: View {
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(Color.black)
-                        .cornerRadius(10)
+                        .cornerRadius(25)
                         .padding(.horizontal)
                 }
+                .frame(height: 50)
+                
+                Spacer()
+                    .frame(height: 20)
+                
             }
             .navigationBarHidden(false)
             .navigationBarTitleDisplayMode(.inline)

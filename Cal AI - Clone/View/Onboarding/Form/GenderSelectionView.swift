@@ -24,7 +24,6 @@ struct GenderSelectionView: View {
                 
                 Text("description".localized)
                     .font(.body)
-                    .foregroundColor(.gray)
                     .multilineTextAlignment(.leading)
                     .opacity(isViewVisible ? 1 : 0)
                     .animation(.easeIn(duration: 0.5).delay(0.2), value: isViewVisible)

@@ -22,7 +22,6 @@ struct HeightWeightView: View {
                 
                 Text("description".localized)
                     .font(.body)
-                    .foregroundColor(.gray)
                     .opacity(isViewVisible ? 1 : 0)
                     .animation(.easeIn(duration: 0.5), value: isViewVisible)
             }

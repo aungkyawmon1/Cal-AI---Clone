@@ -24,7 +24,6 @@ struct GoalSelectionView: View {
                 
                 Text("what_is_your_goal_description".localized)
                     .font(.body)
-                    .foregroundColor(.gray)
                     .multilineTextAlignment(.leading)
                     .opacity(isViewVisible ? 1 : 0)
                     .animation(.easeIn(duration: 0.5), value: isViewVisible)

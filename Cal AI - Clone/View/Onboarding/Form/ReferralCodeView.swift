@@ -23,7 +23,6 @@ struct ReferralCodeView: View {
                 
                 Text("you_can_skip_this_step".localized)
                     .font(.body)
-                    .foregroundColor(.gray)
                     .opacity(isViewVisible ? 1 : 0)
                     .animation(.easeIn(duration: 0.5), value: isViewVisible)
             }
