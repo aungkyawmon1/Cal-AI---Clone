@@ -27,11 +27,17 @@ This project recreates the onboarding experience of the Cal AI application using
 
 ### Screenshots
 
-[Place your screenshots here]
-- Intro Page
-- Onboarding Flow
-- Language Selection
-- Home Dashboard
+### Intro Page
+<img src="Screenshots/intro.png" width="300">
+
+### Onboarding Page
+<img src="Screenshots/onboarding.png" width="300">
+
+### Language Selection
+<img src="Screenshots/language.png" width="300">
+
+### Home Dashboard
+<img src="Screenshots/home.png" width="300">
 
 ### Demo Video
 
