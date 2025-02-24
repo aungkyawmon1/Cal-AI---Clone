@@ -9,53 +9,62 @@ import SwiftUI
 
 struct PreviousAppsView: View {
     @ObservedObject var userData: UserData
+    @State private var isViewVisible = false
     
     var body: some View {
-        VStack {
-            Text("Have you tried other calorie tracking apps?")
-                .font(.title)
-                .fontWeight(.bold)
-                .multilineTextAlignment(.center)
-                .padding()
+        VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("have_you_tried_other_calorie_tracking_apps".localized)
+                    .font(.title)
+                    .fontWeight(.bold)
+            }
             
             Spacer()
             
             VStack(spacing: 20) {
-                Button(action: { userData.hasTriedOtherApps = true }) {
-                    HStack {
-                        Image(systemName: "hand.thumbsup.fill")
-                            .font(.system(size: 30))
-                        Text("Yes")
-                            .font(.title2)
-                        Spacer()
-                        if userData.hasTriedOtherApps == true {
-                            Image(systemName: "checkmark.circle.fill")
-                        }
+                SelectableTextButtonWithIcon(
+                    icon: "hand.thumbsup.fill",
+                    text: "yes".localized,
+                    isSelected: userData.hasTriedOtherApps == true,
+                    isSystemImage: true
+                ) {
+                    withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                        userData.hasTriedOtherApps = true
                     }
-                    .padding()
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(10)
                 }
+                .modifier(SlideInFromTopModifier(
+                    isPresented: isViewVisible,
+                    delay: 0.1
+                ))
                 
-                Button(action: { userData.hasTriedOtherApps = false }) {
-                    HStack {
-                        Image(systemName: "hand.thumbsdown.fill")
-                            .font(.system(size: 30))
-                        Text("No")
-                            .font(.title2)
-                        Spacer()
-                        if userData.hasTriedOtherApps == false {
-                            Image(systemName: "checkmark.circle.fill")
-                        }
+                SelectableTextButtonWithIcon(
+                    icon: "hand.thumbsdown.fill",
+                    text: "no".localized,
+                    isSelected: userData.hasTriedOtherApps == false,
+                    isSystemImage: true
+                ) {
+                    withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                        userData.hasTriedOtherApps = false
                     }
-                    .padding()
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(10)
                 }
+                .modifier(SlideInFromTopModifier(
+                    isPresented: isViewVisible,
+                    delay: 0.1
+                ))
+                
             }
-            .padding(.horizontal)
             
             Spacer()
+        }
+        .padding(.horizontal, 20)
+        .onAppear {
+            // Trigger animations
+            isViewVisible = true
+            
+        }
+        .onDisappear {
+            // Reset states
+            isViewVisible = false
         }
     }
 }

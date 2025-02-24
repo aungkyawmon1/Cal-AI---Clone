@@ -60,7 +60,7 @@ struct IntroView: View {
                     .environmentObject(localizationManager)
             }
             .navigationDestination(isPresented: $navigateToRegistration) {
-                RegistrationView()
+                OnboardingView()
                     .navigationBarBackButtonHidden(true)
             }
             .id(viewRefresh)

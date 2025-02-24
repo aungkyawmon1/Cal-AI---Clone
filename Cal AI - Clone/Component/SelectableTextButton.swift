@@ -7,12 +7,28 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct SelectableTextButton: View {
+    let text: String
+    let isSelected: Bool
+    let action: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: action) {
+            Text(text)
+                .font(.headline)
+                .foregroundColor(isSelected ? .white : .black)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(isSelected ? Color.black : Color.gray.opacity(0.2))
+                )
+        }
     }
 }
 
 #Preview {
-    SelectableTextButton()
+    SelectableTextButton(text: "String", isSelected: false, action: { print("Action") })
 }

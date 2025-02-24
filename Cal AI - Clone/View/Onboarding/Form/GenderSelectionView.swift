@@ -9,44 +9,56 @@ import SwiftUI
 
 struct GenderSelectionView: View {
     @ObservedObject var userData: UserData
-
+    @State private var isViewVisible = false
+    
+    let genderOptions = ["male".localized, "female".localized, "other".localized]
+    
     var body: some View {
-        VStack {
-            Text("choose_gender".localized)
-                .font(.title)
-                .fontWeight(.bold)
-                .padding()
-
-            Text("description".localized)
-                .font(.body)
-                .multilineTextAlignment(.center)
-                .padding(.horizontal)
-
+        VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("choose_gender".localized)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .opacity(isViewVisible ? 1 : 0)
+                    .animation(.easeIn(duration: 0.5), value: isViewVisible)
+                
+                Text("description".localized)
+                    .font(.body)
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.leading)
+                    .opacity(isViewVisible ? 1 : 0)
+                    .animation(.easeIn(duration: 0.5).delay(0.2), value: isViewVisible)
+            }
+            
             Spacer()
-
-            ForEach(["male".localized, "female".localized, "other".localized], id: \.self) { gender in
-                Button(action: {
-                    userData.gender = gender
-                }) {
-                    HStack {
-                        Text(gender)
-                            .font(.headline)
-                            .foregroundColor(.black)
-                        Spacer()
-                        if userData.gender == gender {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundColor(.blue)
+            
+            VStack(spacing: 12) {
+                ForEach(Array(genderOptions.enumerated()), id: \.element) { index, gender in
+                    SelectableTextButton(
+                        text: gender,
+                        isSelected: userData.gender == gender,
+                        action: {
+                            userData.gender = gender
                         }
-                    }
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(10)
-                    .padding(.horizontal)
+                    )
+                    .modifier(SlideInFromTopModifier(
+                        isPresented: isViewVisible,
+                        delay: 0.3 + Double(index) * 0.1
+                    ))
                 }
             }
-
+            
             Spacer()
+        }
+        .padding(.horizontal, 20)
+        .onAppear {
+            // Trigger animations
+            isViewVisible = true
+            
+        }
+        .onDisappear {
+            // Reset states
+            isViewVisible = false
         }
     }
 }

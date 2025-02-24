@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct WorkoutSectionVO: Hashable, Identifiable {
+    let id = UUID() // Adds unique identifier
+    let name: String
+    let caption: String
+    let icon: String
+}

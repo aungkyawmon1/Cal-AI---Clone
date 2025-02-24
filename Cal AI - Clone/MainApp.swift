@@ -3,10 +3,11 @@
 import SwiftUI
 
 @main
-struct ___PACKAGENAME:identifier___App: App {
+struct MainApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            IntroView()
+                .preferredColorScheme(.light) // Forces light mode
         }
     }
 }

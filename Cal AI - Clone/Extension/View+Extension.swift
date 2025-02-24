@@ -7,12 +7,10 @@
 
 import SwiftUI
 
-struct View_Extension: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+extension View {
+    func onChange<V>(of values: [V], perform action: @escaping () -> Void) -> some View where V: Equatable {
+        self.onChange(of: values[0]) { _ in action() }
+            .onChange(of: values[1]) { _ in action() }
+            .onChange(of: values[2]) { _ in action() }
     }
-}
-
-#Preview {
-    View_Extension()
 }

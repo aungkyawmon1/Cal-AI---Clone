@@ -9,85 +9,62 @@ import SwiftUI
 
 struct SocialSourceView: View {
     @ObservedObject var userData: UserData
+    @State private var isViewVisible = false
     
     let sources = [
-        ("Instagram", "instagram", false),
-        ("Facebook", "facebook", false),
-        ("TikTok", "music.note", false),
-        ("YouTube", "play.rectangle", false),
-        ("Google", "magnifyingglass", false),
-        ("TV", "tv", false),
-        ("Friend or Family", "person.2", true),
-        ("Other", "ellipsis", true)
-    ] // (Title, image resource, isSystemIcon)
+        SelectableTextButtonWithIconVO(name: "Instagram", icon: "instagram"),
+        SelectableTextButtonWithIconVO(name: "Facebook", icon: "facebook"),
+        SelectableTextButtonWithIconVO(name: "TikTok", icon: "tiktok"),
+        SelectableTextButtonWithIconVO(name: "YouTube", icon: "youtube"),
+        SelectableTextButtonWithIconVO(name: "Google", icon: "google"),
+        SelectableTextButtonWithIconVO(name: "TV", icon: "tv"),
+        SelectableTextButtonWithIconVO(name: "Friend or Family", icon: "audience"),
+        SelectableTextButtonWithIconVO(name: "Other", icon: "more")
+    ] // (Title, image resource)
     
     var body: some View {
-        VStack {
-            Text("Where did you hear about us?")
+        VStack(alignment: .leading) {
+            
+            Text("where_did_you_hear_about_us".localized)
                 .font(.title)
                 .fontWeight(.bold)
-                .padding()
+                .opacity(isViewVisible ? 1 : 0)
+                .animation(.easeIn(duration: 0.5), value: isViewVisible)
+            
+              
             
             ScrollView {
                 VStack(spacing: 12) {
-                    ForEach(sources, id: \.0) { source, icon, isFromSystem in
-                        Button(action: {
-                            userData.socialSource = source
-                        }) {
-                            HStack {
-                                if !isFromSystem {
-                                    Image(systemName: icon)
-                                        .foregroundColor(.blue)
-                                } else {
-                                    Image(icon)
-                                        .resizable()
-                                        .scaledToFit()
-                                }
-                                
-                                Text(source)
-                                    .font(.headline)
-                                    .foregroundColor(.black)
-                                Spacer()
-                                if userData.socialSource == source {
-                                    Image(systemName: "checkmark.circle.fill")
-                                        .foregroundColor(.blue)
-                                }
+                    ForEach(sources) { socialVO in
+                        SelectableTextButtonWithIcon(
+                            icon: socialVO.icon,
+                            text: socialVO.name,
+                            isSelected: userData.socialSource == socialVO.name,
+                            isSystemImage: false
+                        ) {
+                            withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                                userData.socialSource = socialVO.name
                             }
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.gray.opacity(0.2))
-                            .cornerRadius(10)
                         }
+                        .modifier(SlideInFromTopModifier(
+                            isPresented: isViewVisible,
+                            delay: 0.3 + Double(sources.firstIndex(of: socialVO) ?? 0) * 0.1
+                        ))
                     }
                 }
-                .padding(.horizontal)
             }
         }
-    }
-}
-
-
-
-// InfoView.swift
-struct InfoView: View {
-    var body: some View {
-        VStack {
-            Text("Cal AI creates long-term results")
-                .font(.title)
-                .fontWeight(.bold)
-                .multilineTextAlignment(.center)
-                .padding()
+        .padding(.horizontal, 20)
+        .onAppear {
+            // Trigger animations
+            isViewVisible = true
             
-            Spacer()
-            
-            Image(systemName: "chart.line.uptrend.xyaxis")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 200, height: 200)
-                .foregroundColor(.blue)
-            
-            Spacer()
         }
+        .onDisappear {
+            // Reset states
+            isViewVisible = false
+        }
+        
     }
 }
 

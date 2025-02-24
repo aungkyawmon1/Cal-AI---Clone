@@ -5,3 +5,79 @@
   Created by Aung Kyaw Mon on 2/22/2568.
   
 */
+// Localizable.strings (Turkish)
+"welcome_title" = "Uygulamaya Hoş Geldiniz";
+"welcome_description" = "İlerlemenizi takip edin ve fitness hedeflerinize ulaşın.";
+"get_started" = "Başla";
+"back" = "Geri";
+"next" = "İleri";
+"finish" = "Bitir";
+
+"choose_gender" = "Cinsiyetinizi Seçin";
+"description" = "Bu, size özel planınızı oluşturmak için kullanılacak";
+"male" = "Erkek";
+"female" = "Kadın";
+"other" = "Diğer";
+
+"workout_title" = "Haftada kaç antrenman yapıyorsunuz?";
+"workout_count" = "%d Antrenman";
+"workouts_count" = "%d Antrenman";
+
+"birth_date" = "Doğum Tarihi";
+"day" = "Gün";
+"month" = "Ay";
+"year" = "Yıl";
+
+"maintainance_obstacles_view_title" = "Hedeflerinize ulaşmanızı engelleyen nedir?";
+"lack_of_consistency" = "Tutarsızlık";
+"unhealthy_eating_habits" = "Sağlıksız beslenme alışkanlıkları";
+"lack_of_support" = "Destek eksikliği";
+"busy_schedule" = "Yoğun program";
+"lack_of_meal_inspiration" = "Yemek fikri eksikliği";
+
+"do_you_follow_a_specific_diet" = "Belirli bir diyet uyguluyor musunuz?";
+"classic" = "Klasik";
+"pescatarian" = "Pesketaryen";
+"vegetarian" = "Vejetaryen";
+"vegan" = "Vegan";
+
+"what_would_you_like_to_accomplish" = "Neyi başarmak istersiniz?";
+"eat_and_live_healthier" = "Daha sağlıklı beslen ve yaşa";
+"boost_my_energy_and_mood" = "Enerji ve ruh halimi yükselt";
+"stay_motivated_and_consistent" = "Motive ve istikrarlı kal";
+"feel_better_about_my_body" = "Vücudumla ilgili daha iyi hisset";
+
+"all_done" = "Tamamlandı";
+"thank_you_for_trusting_us" = "Bize güvendiğiniz için\nteşekkür ederiz";
+"all_done_description" = "Kişisel bilgilerinizi her zaman gizli ve güvende tutacağımıza söz veriyoruz";
+
+"what_is_your_desired_weight" = "Hedef kilonuz nedir?";
+"gain_weight" = "Kilo Al";
+"lose_weight" = "Kilo Ver";
+"maintain" = "Kilonu Koru";
+"weight_gain" = "kilo alma";
+"weight_loss" = "kilo verme";
+
+"what_is_your_goal" = "Hedefiniz nedir?";
+"what_is_your_goal_description" = "Bu, kalori alımı planınızı oluşturmamıza yardımcı olur";
+
+"goal_speed_view_title" = "Hedefinize ne kadar hızlı ulaşmak istiyorsunuz?";
+"goal_speed_view_description" = "Haftalık kilo verme hızı";
+
+"height_and_weight" = "Boy & Kilo";
+"imperial" = "İngiliz";
+"metric" = "Metrik";
+
+"cal_ai_creates_long_term_results" = "Cal AI uzun vadeli sonuçlar oluşturur";
+
+"have_you_tried_other_calorie_tracking_apps" = "Başka kalori takip uygulamaları denediniz mi?";
+
+"do_you_have_a_referral_code" = "Referans kodunuz var mı?";
+"you_can_skip_this_step" = "Bu adımı atlayabilirsiniz.";
+"referral_code" = "Referans Kodu";
+
+"where_did_you_hear_about_us" = "Bizi nereden duydunuz?";
+
+"how_many_workouts_do_you_do_per_week" = "Haftada kaç antrenman yapıyorsunuz?";
+"yes" = "Evet";
+"no" = "Hayır";

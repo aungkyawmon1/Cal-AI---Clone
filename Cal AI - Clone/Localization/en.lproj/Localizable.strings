@@ -5,3 +5,80 @@
   Created by Aung Kyaw Mon on 2/22/2568.
   
 */
+
+// Localizable.strings (English)
+"welcome_title" = "Welcome to the App";
+"welcome_description" = "Track your progress and achieve your fitness goals.";
+"get_started" = "Get Started";
+"back" = "Back";
+"next" = "Next";
+"finish" = "Finish";
+
+"choose_gender" = "Choose your Gender";
+"description" = "This will be used to calibrate your custom plan";
+"male" = "Male";
+"female" = "Female";
+"other" = "Other";
+
+"workout_title" = "How many workouts do you do per week?";
+"workout_count" = "%d Workout";
+"workouts_count" = "%d Workouts";
+
+"birth_date" = "Birth Date";
+"day" = "Day";
+"month" = "Month";
+"year" = "Year";
+
+"maintainance_obstacles_view_title" = "What's stopping you from reaching your goals?";
+"lack_of_consistency" = "Lack of consistency";
+"unhealthy_eating_habits" = "Unhealthy eating habits";
+"lack_of_support" = "Lack of support";
+"busy_schedule" = "Busy schedule";
+"lack_of_meal_inspiration" = "Lack of meal inspiration";
+
+"do_you_follow_a_specific_diet" = "Do you follow a specific diet?";
+"classic" = "Classic";
+"pescatarian" = "Pescatarian";
+"vegetarian" = "Vegetarian";
+"vegan" = "Vegan";
+
+"what_would_you_like_to_accomplish" = "What would you like to accomplish?";
+"eat_and_live_healthier" = "Eat and live healthier";
+"boost_my_energy_and_mood" = "Boost my energy and mood";
+"stay_motivated_and_consistent" = "Stay motivated and consistent";
+"feel_better_about_my_body" = "Feel better about my body";
+
+"all_done" = "All Done";
+"thank_you_for_trusting_us" = "Thank you for \n trusting us";
+"all_done_description" = "We promise to always keep your personal information private and secure";
+
+"what_is_your_desired_weight" = "What is your desired weight?";
+"gain_weight" = "Gain Weight";
+"lose_weight" = "Lose Weight";
+"maintain" = "Maintain";
+"weight_gain" = "weight gain";
+"weight_loss" = "weight loss";
+
+"what_is_your_goal" = "What is your goal?";
+"what_is_your_goal_description" = "This helps us generate a plan for your calories intake";
+
+"goal_speed_view_title" = "How fast do you want to reach your goal?";
+"goal_speed_view_description" = "Loss weight speed per week";
+
+"height_and_weight" = "Height & Weight";
+"imperial" = "Imperial";
+"metric" = "Metric";
+
+"cal_ai_creates_long_term_results" = "Cal AI creates long-term results";
+
+"have_you_tried_other_calorie_tracking_apps" = "Have you tried other calorie tracking apps?";
+
+"do_you_have_a_referral_code" = "Do you have a referral code?";
+"you_can_skip_this_step" = "You can skip this step.";
+"referral_code" = "Referral Code";
+
+"where_did_you_hear_about_us" = "Where did you hear about us?";
+
+"how_many_workouts_do_you_do_per_week" = "How many workouts do you do per week?";
+"yes" = "Yes";
+"no" = "No";

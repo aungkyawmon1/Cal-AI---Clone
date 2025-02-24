@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+enum LocalizationLanguage: String {
+    case english = "en"
+    case japanese = "ja"
+    case turkish = "tr"
+    
+    var displayName: String {
+        switch self {
+        case .english: return "English"
+        case .japanese: return "日本語"
+        case .turkish: return "Türkçe"
+        }
+    }
+}

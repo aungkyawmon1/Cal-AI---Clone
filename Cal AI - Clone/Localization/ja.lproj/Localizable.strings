@@ -5,3 +5,79 @@
   Created by Aung Kyaw Mon on 2/22/2568.
   
 */
+// Localizable.strings (Japanese)
+"welcome_title" = "アプリへようこそ";
+"welcome_description" = "進捗を追跡して、フィットネスの目標を達成しましょう";
+"get_started" = "始める";
+"back" = "戻る";
+"next" = "次へ";
+"finish" = "完了";
+
+"choose_gender" = "性別を選択してください";
+"description" = "カスタムプランの調整に使用されます";
+"male" = "男性";
+"female" = "女性";
+"other" = "その他";
+
+"workout_title" = "週に何回運動をしますか？";
+"workout_count" = "週%d回";
+"workouts_count" = "週%d回";
+
+"birth_date" = "生年月日";
+"day" = "日";
+"month" = "月";
+"year" = "年";
+
+"maintainance_obstacles_view_title" = "目標達成の妨げになっているものは何ですか？";
+"lack_of_consistency" = "継続性の欠如";
+"unhealthy_eating_habits" = "不健康な食習慣";
+"lack_of_support" = "サポートの不足";
+"busy_schedule" = "忙しいスケジュール";
+"lack_of_meal_inspiration" = "食事のアイデア不足";
+
+"do_you_follow_a_specific_diet" = "特定の食事制限はありますか？";
+"classic" = "一般的な食事";
+"pescatarian" = "ペスカタリアン";
+"vegetarian" = "ベジタリアン";
+"vegan" = "ビーガン";
+
+"what_would_you_like_to_accomplish" = "何を達成したいですか？";
+"eat_and_live_healthier" = "より健康的な食事と生活";
+"boost_my_energy_and_mood" = "エネルギーと気分を向上させる";
+"stay_motivated_and_consistent" = "モチベーションと継続性を保つ";
+"feel_better_about_my_body" = "自分の体に自信を持つ";
+
+"all_done" = "完了しました";
+"thank_you_for_trusting_us" = "ご信頼\nありがとうございます";
+"all_done_description" = "個人情報は常にプライバシーと安全性を保持することをお約束します";
+
+"what_is_your_desired_weight" = "目標体重を教えてください";
+"gain_weight" = "増量";
+"lose_weight" = "減量";
+"maintain" = "維持";
+"weight_gain" = "体重増加";
+"weight_loss" = "体重減少";
+
+"what_is_your_goal" = "あなたの目標は？";
+"what_is_your_goal_description" = "カロリー摂取計画の作成に役立ちます";
+
+"goal_speed_view_title" = "目標達成までの期間はどのくらいを希望しますか？";
+"goal_speed_view_description" = "週当たりの減量スピード";
+
+"height_and_weight" = "身長と体重";
+"imperial" = "ヤード・ポンド法";
+"metric" = "メートル法";
+
+"cal_ai_creates_long_term_results" = "Cal AIは長期的な結果を生み出します";
+
+"have_you_tried_other_calorie_tracking_apps" = "他のカロリー記録アプリを使用したことはありますか？";
+
+"do_you_have_a_referral_code" = "紹介コードをお持ちですか？";
+"you_can_skip_this_step" = "このステップはスキップできます";
+"referral_code" = "紹介コード";
+
+"where_did_you_hear_about_us" = "どこで当アプリを知りましたか？";
+
+"how_many_workouts_do_you_do_per_week" = "週に何回運動をしますか？";
+"yes" = "はい";
+"no" = "いいえ";
