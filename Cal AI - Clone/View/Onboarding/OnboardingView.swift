@@ -20,7 +20,7 @@ struct OnboardingView: View {
                 HStack {
                     Button(action: {
                         if currentStep > 0 {
-                            if currentStep == 11 && userData.goal == "maintain".localized {
+                            if currentStep == 12 && userData.goal == "maintain".localized {
                                 currentStep = 7
                             } else {
                                 currentStep -= 1
@@ -100,7 +100,7 @@ struct OnboardingView: View {
                 Button(action: {
                     if currentStep < 17 {
                         if currentStep == 7 && userData.goal == "maintain".localized {
-                            currentStep = 11
+                            currentStep = 12
                         } else {
                             currentStep += 1
                         }
