@@ -41,7 +41,7 @@ This project recreates the onboarding experience of the Cal AI application using
 
 ### Demo Video
 
-[Place your video demonstration here]
+[![Demo Video](Screenshots/video-thumbnail.png)](https://drive.google.com/file/d/1iCunoWW3rKaOuuKRJ0BIXtmZDHYWjByf/view?usp=sharing)
 
 ## 🛠 Technical Approach
 
